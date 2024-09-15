@@ -52,7 +52,7 @@ try {
 
     //Recipients
     $mail->setFrom(getenv('EMAIL_USER'), 'Ujjwal');
-    $mail->addAddress("ujjwaljayswal9@gmail.com");
+    $mail->addAddress("ujjwal@unforus.com");
     
 
 
