@@ -1,0 +1,25 @@
+name: Going Places Now
+
+on:
+  schedule:
+    - cron: "0 8 * * 6"
+  workflow_dispatch:
+  
+jobs:
+  my-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: "7.4"
+
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Run explore.php
+        env:
+          EMAIL_USER: ${{ secrets.EMAIL_USER }}
+          EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
+
+        run: php explore.php
